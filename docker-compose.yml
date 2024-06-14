@@ -1,0 +1,12 @@
+services:
+  server:
+    build: .
+    network_mode: "host"
+    container_name: duckdb-jupyter-server
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./data:/home/jovyan/data
+    environment:
+      - JUPYTER_TOKEN=your_secret_token
