@@ -17,6 +17,8 @@ RUN echo 'alias vimon="jupyter labextension enable @axlair/jupyterlab_vim"' >> ~
 # Example usage of the alias
 RUN /bin/bash -c "source ~/.bashrc"
 
+# remove example dir
+RUN rm -r work
 # Change the entrypoint
 ENTRYPOINT ["tini", "-g", "--"]
 CMD [ \
